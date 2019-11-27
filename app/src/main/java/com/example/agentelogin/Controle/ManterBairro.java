@@ -58,8 +58,11 @@ public class ManterBairro extends AppCompatActivity implements AdapterView.OnIte
         aliasalvarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bairro = new Bairro();
-                bairro.set_id(databaseReference.push().getKey());
+                if (bairro.get_id()==null) {
+                    bairro = new Bairro();
+                    bairro.set_id(databaseReference.push().getKey());
+                }
+
                 bairro.setBairro((aliasbairro.getText().toString()));
                 databaseReference.child("Bairro").child(bairro.get_id()).setValue(bairro);
                 Toast.makeText(getBaseContext(), "Dados Gravados com Sucesso", Toast.LENGTH_SHORT).show();
@@ -102,7 +105,7 @@ public class ManterBairro extends AppCompatActivity implements AdapterView.OnIte
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(ManterBairro.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+       // firebaseDatabase.setPersistenceEnabled(true);
         databaseReference = firebaseDatabase.getReference();
 
     }

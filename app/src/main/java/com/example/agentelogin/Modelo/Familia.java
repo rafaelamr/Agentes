@@ -13,11 +13,11 @@ public class Familia {
 
     @Override
     public String toString() {
-        return "Familia" + '\'' +
-                " Nome: " + nome + '\'' +
-                " CPF: " + cpf + '\'' +
-                " Celular: " + celular + '\'' +
-                " Bairro: " + bairro + '\'' +
+        return "Representante da Familia:" + '\n' +
+                " Nome: " + nome + '\n' +
+                " CPF: " + cpf + '\n' +
+                " Celular: " + celular + '\n' +
+                " Bairro: " + bairro + '\n' +
                 " Necessidade: " + necessidade;
     }
 

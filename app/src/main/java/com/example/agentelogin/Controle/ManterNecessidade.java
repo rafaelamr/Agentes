@@ -58,8 +58,11 @@ public class ManterNecessidade extends AppCompatActivity implements AdapterView.
         aliasalvarN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                necessidade = new Necessidade();
-                necessidade.set_id(databaseReference.push().getKey());
+                if (necessidade.get_id()==null) {
+                    necessidade = new Necessidade();
+                    necessidade.set_id(databaseReference.push().getKey());
+                }
+
                 necessidade.setNecessidade((aliasnecessidade.getText().toString()));
                 databaseReference.child("Necessidade").child(necessidade.get_id()).setValue(necessidade);
                 Toast.makeText(getBaseContext(), "Dados Gravados com Sucesso", Toast.LENGTH_SHORT).show();
