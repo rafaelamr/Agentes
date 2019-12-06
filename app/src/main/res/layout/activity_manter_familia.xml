@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Digite seu Nome"
+            android:hint="Nome do Representante"
             android:inputType="textPersonName" />
 
         <EditText
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Digite seu CPF (só números)"
+            android:hint="CPF do Representante"
             android:inputType="textPersonName" />
 
         <EditText
@@ -37,16 +37,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Celular (DDD + Numero)"
+            android:hint="Celular do Representante (DDD + Numero)"
             android:inputType="textPersonName" />
 
         <Spinner
-            android:id="@+id/spinnernecessidade"
+            android:id="@+id/spinnerbairros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Spinner
-            android:id="@+id/spinnerbairros"
+            android:id="@+id/spinnernecessidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

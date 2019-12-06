@@ -82,7 +82,6 @@ public class ManterFamilia extends AppCompatActivity implements AdapterView.OnIt
                     familia.set_id(databaseReference.push().getKey());
 
                 }
-
                     familia.setNome(aliasnome.getText().toString());
                     familia.setCpf(aliascpf.getText().toString());
                     familia.setCelular(aliascelular.getText().toString());
@@ -258,6 +257,7 @@ public class ManterFamilia extends AppCompatActivity implements AdapterView.OnIt
     }
 
 
+
     private int getIndex(Spinner spinner, String myString) {
         for (int i = 0; i < spinner.getCount(); i++) {
             if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)) {
@@ -273,6 +273,7 @@ public class ManterFamilia extends AppCompatActivity implements AdapterView.OnIt
         aliasnome.setText("");
         aliascpf.setText("");
         aliascelular.setText("");
+        familia = new Familia();
     }
 
 

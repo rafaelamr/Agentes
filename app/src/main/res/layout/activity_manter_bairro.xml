@@ -25,6 +25,14 @@
             android:hint="Bairro"
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/editTextPntEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ponto de Entrega"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/buttonsalvarN"
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.example.agentelogin.Modelo;
 public class Bairro {
     private String _id;
     private String bairro;
+    private String pntEntrega;
 
     public Bairro(){
     }
@@ -25,5 +26,13 @@ public class Bairro {
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
+    }
+
+    public String getPntEntrega() {
+        return pntEntrega;
+    }
+
+    public void setPntEntrega(String pntEntrega) {
+        this.pntEntrega = pntEntrega;
     }
 }

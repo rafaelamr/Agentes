@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManterBairro extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    public EditText aliasbairro;
+    public EditText aliasbairro, aliaspntentrega;
     public TextView alias_idB;
     public Button aliasalvarB, aliasapagarB;
     public ListView aliaslistaB;
@@ -45,6 +45,7 @@ public class ManterBairro extends AppCompatActivity implements AdapterView.OnIte
 
         alias_idB = (TextView) findViewById(R.id.textViewIdB);
         aliasbairro = (EditText) findViewById(R.id.editTextBairro);
+        aliaspntentrega= findViewById(R.id.editTextPntEntrega);
         aliasalvarB = (Button) findViewById(R.id.buttonsalvarN);
         aliasapagarB = (Button) findViewById(R.id.buttonapagarN);
         aliaslistaB = (ListView) findViewById(R.id.listviewnecessidade);
@@ -64,6 +65,7 @@ public class ManterBairro extends AppCompatActivity implements AdapterView.OnIte
                 }
 
                 bairro.setBairro((aliasbairro.getText().toString()));
+                bairro.setPntEntrega(aliaspntentrega.getText().toString());
                 databaseReference.child("Bairro").child(bairro.get_id()).setValue(bairro);
                 Toast.makeText(getBaseContext(), "Dados Gravados com Sucesso", Toast.LENGTH_SHORT).show();
                 limparCampos();
@@ -112,14 +114,16 @@ public class ManterBairro extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
         bairro = (Bairro) parent.getItemAtPosition(position);
         alias_idB.setText(bairro.get_id().toString());
         aliasbairro.setText(bairro.getBairro().toString());
+        aliaspntentrega.setText(bairro.getPntEntrega());
     }
 
     private void limparCampos() {
         alias_idB.setText("");
         aliasbairro.setText("");
+        aliaspntentrega.setText("");
+        bairro = new Bairro();
     }
 }

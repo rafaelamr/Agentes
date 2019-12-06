@@ -105,7 +105,7 @@ public class ManterNecessidade extends AppCompatActivity implements AdapterView.
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(ManterNecessidade.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+//        firebaseDatabase.setPersistenceEnabled(true);
         databaseReference = firebaseDatabase.getReference();
 
     }
@@ -121,5 +121,6 @@ public class ManterNecessidade extends AppCompatActivity implements AdapterView.
     private void limparCampos() {
         alias_idN.setText("");
         aliasnecessidade.setText("");
+        necessidade = new Necessidade();
     }
 }

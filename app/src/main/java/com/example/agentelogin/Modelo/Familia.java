@@ -45,7 +45,6 @@ public class Familia {
         this.cpf = cpf;
     }
 
-
     public String getCelular() {
         return celular;
     }
